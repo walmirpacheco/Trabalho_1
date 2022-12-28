@@ -10,5 +10,42 @@
     <h2>{{ apresentacao }}</h2>
 
     <p>{{ divulgacao }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>E-mail</th>                
+            </tr>
+        </thead>
+        <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td><a href="{% url 'cliente' cliente.id %}">{{ cliente.nome }}</a></td>
+                <td>{{ cliente.endereco }}</td>
+                <td>{{ cliente.email }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>E-mail</th>                
+            </tr>
+        </thead>
+        <tbody>
+        {% for funcionario in funcionarios %}
+            <tr>
+                <td><a href="{% url 'funcionario' funcionario.id %}">{{ funcionario.nome }}</a></td>
+                <td>{{ funcionario.endereco }}</td>
+                <td>{{ funcionario.email }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
 </body>
 </html>

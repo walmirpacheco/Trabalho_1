@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('telaConf/', admin.site.urls),
     path('', include('core.urls')),
+    
 ]
